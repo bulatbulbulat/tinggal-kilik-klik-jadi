@@ -1,0 +1,83 @@
+<!-- day 7 : seo dan meta data -->
+<!-- html yang diubah bagian head, link navigasi navbar, contact section, deployment github-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mochamad Riqky Fernando</title>
+    
+    <meta name="description" content="Portfolio Web Developer Mochamad Riqky Fernando - Mahasiswa Informatika UPN Veteran Jawa Timur.">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="../aset/logo upn.png">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#">
+            <img src="../aset/logo upn.png" alt="Logo UPN" class="logo">
+        </a>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Mulai Belajar Full Stack</h1>
+            <p>Perjalanan 300 jam dimulai satu satu baris kode</p>
+            <button class="btn-main">Mulai Sekarang</button>
+        </section>
+        
+        <section class="about-section" id="about">
+            <div class="about-content">
+                <h2>Tentang Perjalanan Kodeku</h2>
+                <p>saya adalah mahasiswa informatika yang sedang mendalami dunia fullstack. fokus pada clean code dan antarmuka yang inteteraktif</p>
+                <div class="stat-container">
+                    <div class="stat-item"><b>10+</b> Project</div>
+                    <div class="stat-item"><b>300h</b> Coding</div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-placeholder">
+                    <img src="../aset/profil.jpg" alt="profil-diri">
+                </div>
+            </div>
+        </section>
+        
+        <section class="container-grid">
+            <div class="card">HTML DASAR</div>
+            <div class="card">CSS FLEXBOX</div>
+            <div class="card">CSS GRID</div>
+            <div class="card">Responsive Design</div>
+            <div class="card">CSS GRID</div>
+            <div class="card">Responsive Design</div>
+        </section>
+        <button class="btn-top">
+            <a href="#">back</a>
+        </button>
+
+        <!-- section contact -->
+        <section class="contact" id="contact">
+            <h2>Hubungi Saya</h2>
+            <form action="#">
+                <input type="text" placeholder="Nama Kamu" required>
+                <input type="email" placeholder="Email Kamu" required>
+                <textarea placeholder="Pesan" rows="5"></textarea>
+                <button type="submit" class="btn-main">Kirim Pesan</button>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>
+
+<!-- 
+NOTE
+menggunakan konsep: main axis dan cross axis
+main -> sumbu utama bergerak secara horizontal dikontrol oleh justify content
+cross -> sumbu silang bergerak vertikal dikontrol oleh align item
+
+-->

@@ -1,0 +1,306 @@
+/* css variabel di dalam root */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --button-hover: #0056b3;
+    --primary-glow: 0 0 20px rgba(0,123,255,0.5);
+}
+
+::selection{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* css animation pakai keyframes */
+@keyframes popupBawah{
+    from { opacity: 0; transform: translateY(30px);} 
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes logoGerak {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.1);} 
+}
+
+/* logo intro */
+@keyframes logoIntro {
+    from { transform: rotate(90deg) scale(0); opacity: 0;}
+    to { transform: rotate(0) scale(1); opacity: 1;}
+}
+
+
+/* riset dasar di browser */
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 10%;
+    /* ini untuk warna transparannya */
+    background-color: rgabe(248,249,250, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+    /* ngebuat navbar sticky ke atas */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.btn-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 50px;
+    z-index: 99;;
+    background: var(--primary-color);
+}
+
+.btn-top a{
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    height: 50px;
+    animation: logoIntro 1.5s ease-out forwards;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    position: relative; /* PAGAR: Biar garisnya nggak lari kemana-mana */
+    text-decoration: none;
+    color: #333;
+    padding: 5px 0; /* Kasih ruang biar garis nggak nempel bgt ke tulisan */
+}
+
+.navbar ul li:not(:last-child) a::after {
+    content: ''; 
+    position: absolute;
+    width: 0; 
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%; 
+}
+
+.navbar ul li:last-child a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+.navbar ul li:last-child a:hover{
+    background-color: var(--button-hover);
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: popupBawah 1s ease-out
+
+}
+
+.hero h1::before{
+    content: 'TvT ';
+}
+
+.hero h1::after{
+    content: ' ->';
+}
+
+.btn-main {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-main:hover{
+    background-color: gold;
+    box-shadow: var(--primary-glow);
+    transform: scale(1.05);
+}
+
+
+.container-grid{
+    padding: 50px 10%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.card{
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: all 0.3s ease-out;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    background-color: #ddd;
+    box-shadow: var(--card-shadow);
+}
+
+.card:nth-child(odd):hover{
+    transform: translateY(-15px) rotate(-3deg);
+    background-color: lightblue;
+}
+
+.card:nth-child(even):hover{
+    transform: translateY(-15px) rotate(3deg);
+    background-color: coral;
+}
+
+.card:nth-child(3):hover{
+    background-color: goldenrod;
+}
+
+
+.about-section {
+    display: flex;
+    padding: 80px 10%;
+    align-items: center;
+    gap: 50px;
+    background-color: #fff;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder{
+    width: 300px;
+    height: 300px; 
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transform: rotate(5deg);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.stat-container{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-item{
+    background: var(--bg-light);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+.stat-item b {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+
+/* css day - 7 */
+.contact {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input, .contact textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0,123,255,0.2);
+}
+
+
+
+
+
+
+/* mengatur tampilan di mobile */
+@media (max-width: 768px){
+    .navbar{flex-direction: column; padding: 15px;}
+    .navbar ul{flex-direction: column; align-items: center; gap: 10px;}
+    .navbar ul li{ margin-left: 0; }
+    .hero{ background-color: #f8f9fa;}
+    .hero h1{ font-size: 2rem;}
+    .container-grid{ grid-template-columns: 1fr;}
+
+    /* section baru */
+    .about-section{flex-direction: column; text-align: center;}
+    .about-image{margin-bottom: 30px; order: -1;}
+    .stat-container{width: 100%; flex-wrap: wrap; justify-content: center;}
+
+}
+
+/* 
+NOTE 
+sticky itu masih punya tempat asal, nah dia bakal sticky kalo udah nyampe diposisi tertentu yang udah ditentuin
+di code ini kita tentuin dia bakal sticky kalo udah menyentuh top 0. z index itu buat ngatur kedalaman. kalo dikasih nilai gede berarti elemen itu
+ada di paling tumpukan paling atas
+
+*/
